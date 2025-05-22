@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Habit - Mobile Car Wash and Auto Detailing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #516587 0%, #222934 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #175e7a 0%, #032a42 100%);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .main-title {
+            font-size: 4rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            opacity: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .contact-info {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .email {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .email a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .email a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: nowrap;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .nav-item {
+            background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            white-space: nowrap;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        .pricing-section {
+            margin-bottom: 30px;
+        }
+
+        .pricing-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .pricing-tab {
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
+            white-space: nowrap;
+        }
+
+        .pricing-tab:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .pricing-instruction {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-list {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-item {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(10px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .nav-item {
+                padding: 12px 20px;
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .phone {
+                font-size: 1.3rem;
+            }
+
+            .pricing-tab {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .nav-item {
+                padding: 10px 15px;
+                font-size: 1rem;
+            }
+            
+            .pricing-tab {
+                padding: 6px 8px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-info">
+            <div class="phone">(562) 206 - 280 6291</div>
+            <div class="email">
+                <a href="mailto:DETAILHABIT562@GMAIL.COM">
+                    DETAILHABIT562@GMAIL.COM
+                </a>
+            </div>
+              <div class="email">
+                <a href="https://instagram.com/detailhabit562">
+                    IG : @DETAILHABITLBC
+                </a>
+            </div>
+            <div class="email">
+                 <a href="https://www.facebook.com/DetailHabitUSA">
+                    Our Facebook Page
+                </a>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1 class="main-title">DETAIL HABIT</h1>
+            <h2 class="subtitle">MOBILE CAR WASH AND AUTO DETAILING</h2>
+            <p class="tagline">Compulsive attention to detail: Serving the OC and LA areas</p>
+        </div>
+
+        <nav class="navigation">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">
+                <a href="https://docs.google.com/spreadsheets/d/1JiSHpr9O0UUGRvSqkHI3OktPO6eI6W9MXfn3TrDzq-w/edit?gid=0#gid=0" target="_blank">Price Sheet</a>
+            </div>
+            <div class="nav-item">Our Team</div>
+            <div class="nav-item">
+                <a href="https://www.instagram.com/detailhabit562" target="_blank">Our Work</a>
+                </div>
+        </nav>
+
+        <div class="pricing-section">
+            <div class="pricing-nav">
+                <div class="pricing-tab">ULTRA</div>
+                <div class="pricing-tab">PREMIUM</div>
+                <div class="pricing-tab">ADVANCED</div>
+                <div class="pricing-tab">EXPRESS</div>
+                <div class="pricing-tab">BASIC</div>
+                <div class="pricing-tab">BUDGET</div>
+                <div class="pricing-tab" style="font-size: 0.8rem;">INTERIOR/EXTERIOR ONLY</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p> 
+                <a href="https://www.facebook.com/DetailHabitUSA" 
+                    target="_blank">Check out our Facebook</a> <br> <br>
+                <a href="https://www.instagram.com/detailhabit562" 
+                    target="_blank">View our work on instagram</a>   <br> <br>
+                    Created by David Borotkos using Adobe Dreamweaver. <br> <br>
+                    All rights reserved. Copyright 2016                 
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Add interactive functionality for pricing tabs
+        const pricingTabs = document.querySelectorAll('.pricing-tab');
+        const pricingItems = document.querySelectorAll('.pricing-item');
+
+        pricingTabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                pricingTabs.forEach(t => t.style.background = 'rgba(255,255,255,0.15)');
+                
+                // Add active class to clicked tab
+                tab.style.background = 'rgba(255,255,255,0.3)';
+                
+                // Here you could add functionality to show/hide specific pricing details
+                console.log(`Clicked on ${tab.textContent} package`);
+            });
+        });
+
+        // Add hover effects for navigation items
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                console.log(`Navigating to ${item.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>
