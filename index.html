@@ -19,18 +19,172 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            max-width: 1000px;
             background: linear-gradient(135deg, #175e7a 0%, #032a42 100%);
-            padding: 30px 20px;
+            padding: 30px 30px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Modified contact info positioning - Fixed position that stays while scrolling */
+        .contact-info {
+            background: linear-gradient(135deg, #175e7a 0%, #032a42 100%);
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            max-width: 350px;
+            width: 350px;
+            
+            /* Fixed position that stays in place while scrolling */
+            position: fixed;
+            top: 90px;
+            right: 35px;
+            z-index: 1000;
+            
+            /* Smooth transitions */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Class for when contact card reaches pricing section - SMOOTH HIDE */
+        .contact-info.stopped {
+            opacity: 0;
+            transform: translateY(-20px);
+            pointer-events: none;
+        }
+
+        /* Hover effect for the contact card - REMOVED MOVEMENT */
+        .contact-info:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .contact-info.stopped:hover {
+            /* No hover effects when stopped */
+        }
+
+        /* Order Detail Now Button */
+        .order-button {
+            background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
+            color: #032a42;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 12px;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 10px rgba(255, 204, 0, 0.3);
+        }
+
+        .order-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+        }
+
+        .order-button:active {
+            transform: translateY(0px);
+            box-shadow: 0 2px 8px rgba(255, 204, 0, 0.4);
+        }
+
+        /* Table-based navigation */
+        .navigation {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .nav-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        .nav-item {
+            background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 15px 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-item:hover {
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-1.5px);
+        }
+
+        /* Pricing table */
+        .pricing-section {
+            margin-bottom: 30px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-table {
+            width: 80%;
+            border-collapse: separate;
+            border-spacing: 5px;
+            margin: 0 auto;
+        }
+
+        .pricing-tab {
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .pricing-tab:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        .pricing-tab.active {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* Specific width control for different tabs */
+        .pricing-tab.small {
+            width: 12%;
+        }
+
+        .pricing-tab.large {
+            width: 16%;
         }
 
         .main-title {
@@ -57,123 +211,199 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        .contact-info {
-            text-align: right;
-            margin-bottom: 20px;
+        .contact-card-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #ffcc00;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            letter-spacing: 0.5px;
         }
 
         .phone {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .email {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 5px;
+            font-size: 0.8rem;
+            opacity: 0.95;
+            margin-bottom: 4px;
+            transition: all 0.3s ease;
         }
 
         .email a {
             color: white;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .email a:hover {
             text-decoration: underline;
+            color: #ffcc00;
         }
 
-        .navigation {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: nowrap;
-            gap: 10px;
-            overflow-x: auto;
+        .contact-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            margin: 8px 0;
         }
 
-        .nav-item {
+        /* Carousel Styles */
+        .carousel-container {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            overflow: hidden;
             background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
-            border: 2px solid rgba(255,255,255,0.3);
-            padding: 15px 30px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            white-space: nowrap;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .nav-item a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            height: 100%;
-            white-space: nowrap;
-        }
-
-        .nav-item:hover {
-            border-color: rgba(255,255,255,0.5);
-            transform: translateY(-2px);
-        }
-
-        .pricing-section {
-            margin-bottom: 30px;
-        }
-
-        .pricing-nav {
+        .carousel-wrapper {
             display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 5px;
+            transition: transform 0.5s ease-in-out;
         }
 
-        .pricing-tab {
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
-            white-space: nowrap;
+        .carousel-item {
+            min-width: 100%;
+            padding: 40px 20px;
         }
 
-        .pricing-tab:hover {
-            background: rgba(255,255,255,0.25);
+        /* Comparison layout */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .pricing-instruction {
+        .single-package {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .package-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 30px;
             text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .package-card.featured {
+            background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
+            color: #032a42;
+            transform: scale(1.05);
+            border-color: #ffcc00;
+        }
+
+        .package-card.featured h3,
+        .package-card.featured .price {
+            color: #032a42;
+        }
+
+        .package-card h3 {
+            color: #ffcc00;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .price {
+            font-size: 2.5em;
             font-weight: bold;
+            color: white;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            list-style: none;
+            margin: 25px 0;
+            flex-grow: 1;
+        }
+
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 14px;
+        }
+
+        .package-card.featured .features li {
+            border-bottom-color: rgba(3,42,66,0.3);
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .btn-select {
+            background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
+            color: #032a42;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: auto;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .pricing-list {
-            max-width: 600px;
-            margin: 0 auto;
+        .package-card.featured .btn-select {
+            background: linear-gradient(135deg, #032a42 0%, #175e7a 100%);
+            color: white;
         }
 
-        .pricing-item {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 15px 25px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
+        .btn-select:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .pricing-item:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateX(10px);
+        .package-card.featured .btn-select:hover {
+            background: linear-gradient(135deg, #043452 0%, #0b5572 100%);
+        }
+
+        /* Navigation dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #ffcc00;
         }
 
         .footer {
@@ -194,6 +424,35 @@
             text-decoration: underline;
         }
 
+        /* Responsive Styles */
+        @media (max-width: 1290px) {
+            .contact-info {
+                position: static;
+                max-width: 1000px;
+                width: 100%;
+                margin: 20px auto;
+                right: auto;
+                top: auto;
+                display: block;
+                opacity: 1;
+                transform: none;
+                pointer-events: auto;
+            }
+
+            .contact-info.stopped {
+                position: static;
+                display: block;
+                opacity: 1;
+                transform: none;
+                pointer-events: auto;
+            }
+
+            .order-button {
+                max-width: 300px;
+                margin: 12px auto 0;
+            }
+        }
+
         @media (max-width: 768px) {
             .main-title {
                 font-size: 2.5rem;
@@ -201,22 +460,91 @@
             }
             
             .nav-item {
-                padding: 12px 20px;
+                padding: 12px 8px;
                 font-size: 1.2rem;
+                size: 80%;
             }
             
             .contact-info {
+                position: static;
+                max-width: 1000px;
+                width: 100%;
+                margin: 20px auto;
                 text-align: center;
-                margin-bottom: 30px;
+                display: block;
+                opacity: 1;
+                transform: none;
+                pointer-events: auto;
+            }
+
+            .navigation {
+                margin-top: 40px;
             }
             
             .phone {
                 font-size: 1.3rem;
             }
 
-            .pricing-tab {
-                padding: 8px 12px;
+            .contact-card-title {
                 font-size: 0.8rem;
+            }
+
+            .phone {
+                font-size: 0.9rem;
+            }
+
+            .email {
+                font-size: 0.7rem;
+            }
+
+            .pricing-tab {
+                padding: 8px 4px;
+                font-size: 0.8rem;
+            }
+
+            .order-button {
+                font-size: 0.9rem;
+                padding: 10px 16px;
+            }
+
+            /* Carousel responsive */
+            .carousel-item {
+                padding: 20px 5px;
+            }
+
+            .comparison-grid {
+                gap: 10px;
+            }
+
+            .package-card {
+                padding: 15px 10px;
+            }
+
+            .package-card.featured {
+                transform: scale(1);
+            }
+            
+            .package-card h3 {
+                font-size: 1.2em;
+            }
+            
+            .price {
+                font-size: 1.5em;
+                margin: 10px 0;
+            }
+
+            .features {
+                margin: 15px 0;
+            }
+
+            .features li {
+                font-size: 11px;
+                padding: 6px 0;
+            }
+
+            .btn-select {
+                padding: 8px 15px;
+                font-size: 12px;
             }
         }
 
@@ -231,114 +559,577 @@
             }
             
             .nav-item {
-                padding: 10px 15px;
+                padding: 10px 6px;
                 font-size: 1rem;
             }
             
             .pricing-tab {
-                padding: 6px 8px;
+                padding: 6px 2px;
                 font-size: 0.7rem;
+            }
+
+            .nav-table, .pricing-table {
+                border-spacing: 5px;
+            }
+
+                        
+            .contact-info {
+                max-width: 1000px;
+                width: 100%;
+                display: block;
+                opacity: 1;
+                transform: none;
+                pointer-events: auto;
+            }
+
+            .order-button {
+                font-size: 0.8rem;
+                padding: 8px 14px;
+            }
+
+            /* Carousel responsive */
+            .carousel-item {
+                padding: 15px 3px;
+            }
+
+            .comparison-grid {
+                gap: 5px;
+            }
+
+            .package-card {
+                padding: 12px 8px;
+            }
+
+            .package-card h3 {
+                font-size: 1em;
+            }
+
+            .price {
+                font-size: 1.3em;
+            }
+
+            .features li {
+                font-size: 10px;
+                padding: 5px 0;
+            }
+
+            .btn-select {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .carousel-item {
+                padding: 10px 2px;
+            }
+
+            .comparison-grid {
+                gap: 3px;
+            }
+
+            .package-card {
+                padding: 10px 5px;
+                border-radius: 5px;
+            }
+
+            .package-card h3 {
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+
+            .price {
+                font-size: 1.1em;
+                margin: 8px 0;
+            }
+
+            .features {
+                margin: 10px 0;
+            }
+
+            .features li {
+                font-size: 9px;
+                padding: 4px 0;
+                line-height: 1.3;
+            }
+
+            .btn-select {
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+
+            .carousel-dots {
+                margin-top: 15px;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
             }
         }
     </style>
 </head>
 <body>
-  
     <div class="container">
-        <div class="contact-info">
-            <div class="phone">(562) 206 - 280 6291</div>
-            <div class="email">
-                <a href="mailto:DETAILHABIT562@GMAIL.COM">
-                    DETAILHABIT562@GMAIL.COM
-                </a>
-            </div>
-              <div class="email">
-                <a href="https://instagram.com/detailhabit562">
-                    IG : @DETAILHABITLBC
-                </a>
-            </div>
-            <div class="email">
-                 <a href="https://www.facebook.com/DetailHabitUSA">
-                    Our Facebook Page
-                </a>
-            </div>
-        </div>
-
-        <div class="container">
-          <div style="text-align: center; margin-bottom: 20px;">
-            <span style="font-size: .8rem; color: #ffcc00;">🚧
-                Site Under Construction
-            </span>  <span style="font-size: .8rem; color: #ffcc00;">🚧</span>
+        <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: .8rem; color: #ffcc00;">
+               <h1><span style="font-size: 2rem; color: #ffcc00;">🚧</span>  Site Under Construction <span style="font-size: 2rem; color: #ffcc00;">🚧</span></h1>
         </div>
 
         <div class="header">
-            
             <h1 class="main-title">DETAIL HABIT</h1>
             <h2 class="subtitle">MOBILE CAR WASH AND AUTO DETAILING</h2>
             <p class="tagline">Compulsive attention to detail: Serving the OC and LA areas</p>
         </div>
 
+        <!-- Table-based main navigation -->
         <nav class="navigation">
-            <div class="nav-item">Home</div>
-            <div class="nav-item">
-                <a href="https://docs.google.com/spreadsheets/d/1JiSHpr9O0UUGRvSqkHI3OktPO6eI6W9MXfn3TrDzq-w/edit?gid=0#gid=0" target="_blank">Price Sheet</a>
-            </div>
-            <div class="nav-item">Our Team</div>
-            <div class="nav-item">
-                <a href="https://www.instagram.com/detailhabit562" target="_blank">Our Work</a>
-                </div>
+            <table class="nav-table">
+                <tr>
+                    <td class="nav-item">
+                        <a href="https://docs.google.com/spreadsheets/d/1JiSHpr9O0UUGRvSqkHI3OktPO6eI6W9MXfn3TrDzq-w/edit?gid=0#gid=0" target="_blank">Price Sheet</a>
+                    </td>
+                    <td class="nav-item">Our Team</td>
+                    <td class="nav-item">
+                        <a href="https://www.instagram.com/detailhabit562" target="_blank">Our Work</a>
+                    </td>
+                    <td class="nav-item">About</td>
+                </tr>
+            </table>
         </nav>
 
+        <!-- Contact card positioned below navigation on smaller screens -->
+        <div class="contact-info">
+            <div class="contact-card-title">GET IN TOUCH</div>
+            <div class="phone">(562) 206-2806</div>
+            <div class="contact-divider"></div>
+            <div class="email">
+                <a href="mailto:DETAILHABIT562@GMAIL.COM">
+                    📧 DETAILHABIT562@GMAIL.COM
+                </a>
+            </div>
+            <div class="email">
+                <a href="https://instagram.com/detailhabit562">
+                    📱 IG: @DETAILHABITLBC
+                </a>
+            </div>
+            <div class="email">
+                <a href="https://www.facebook.com/DetailHabitUSA">
+                    📘 Our Facebook Page
+                </a>
+            </div>
+            <button class="order-button" onclick="orderNow()">
+                🚗 How It Works
+            </button>
+        </div>
+
+        <!-- Table-based pricing navigation -->
         <div class="pricing-section">
-            <div class="pricing-nav">
-                <div class="pricing-tab">ULTRA</div>
-                <div class="pricing-tab">PREMIUM</div>
-                <div class="pricing-tab">ADVANCED</div>
-                <div class="pricing-tab">EXPRESS</div>
-                <div class="pricing-tab">BASIC</div>
-                <div class="pricing-tab">BUDGET</div>
-                <div class="pricing-tab" style="font-size: 0.8rem;">INTERIOR/EXTERIOR ONLY</div>
+            <table class="pricing-table">
+                <tr>
+                    <td class="pricing-tab small" data-slide="0">ULTRA</td>
+                    <td class="pricing-tab small" data-slide="1">PREMIUM</td>
+                    <td class="pricing-tab small" data-slide="2">EXPRESS DETAIL</td>
+                    <td class="pricing-tab small" data-slide="3">SIMPLE DETAIL</td>
+                    <td class="pricing-tab small" data-slide="4">EXPRESS INTERIOR</td>
+                    <td class="pricing-tab small" data-slide="5">EXPRESS WASH</td>
+                    <td class="pricing-tab large" data-slide="6">WATER REMEDIATION</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <!-- Slide 1: ULTRA comparison (Ultra, Premium, Advanced) -->
+                <div class="carousel-item">
+                    <div class="comparison-grid">
+                        <div class="package-card featured">
+                            <h3>ULTRA</h3>
+                            <div class="price">$399</div>
+                            <ul class="features">
+                                <li>Complete Interior & Exterior Detail</li>
+                                <li>Paint Correction & Ceramic Coating</li>
+                                <li>Engine Bay Cleaning</li>
+                                <li>Leather Conditioning</li>
+                                <li>1 Year Protection Warranty</li>
+                                <li>Priority Scheduling</li>
+                                <li>Free Maintenance Wash</li>
+                            </ul>
+                            <button class="btn-select">Select ULTRA</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>PREMIUM</h3>
+                            <div class="price">$299</div>
+                            <ul class="features">
+                                <li>Full Interior & Exterior Detail</li>
+                                <li>Paint Sealant Application</li>
+                                <li>Carpet & Upholstery Shampoo</li>
+                                <li>Tire & Wheel Protection</li>
+                                <li>6 Month Protection</li>
+                                <li>Window Rain Treatment</li>
+                            </ul>
+                            <button class="btn-select">Select PREMIUM</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>EXPRESS DETAIL</h3>
+                            <div class="price">$199</div>
+                            <ul class="features">
+                                <li>Interior & Exterior Wash</li>
+                                <li>Wax Application</li>
+                                <li>Interior Vacuum & Wipe Down</li>
+                                <li>Tire Shine</li>
+                                <li>3 Month Protection</li>
+                                <li>Air Freshener</li>
+                            </ul>
+                            <button class="btn-select">Select ADVANCED</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: PREMIUM comparison (Premium, Advanced, Express) -->
+                <div class="carousel-item">
+                    <div class="comparison-grid">
+                        <div class="package-card featured">
+                            <h3>PREMIUM</h3>
+                            <div class="price">$299</div>
+                            <ul class="features">
+                                <li>Full Interior & Exterior Detail</li>
+                                <li>Paint Sealant Application</li>
+                                <li>Carpet & Upholstery Shampoo</li>
+                                <li>Tire & Wheel Protection</li>
+                                <li>6 Month Protection</li>
+                                <li>Window Rain Treatment</li>
+                            </ul>
+                            <button class="btn-select">Select PREMIUM</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>ADVANCED</h3>
+                            <div class="price">$199</div>
+                            <ul class="features">
+                                <li>Interior & Exterior Wash</li>
+                                <li>Wax Application</li>
+                                <li>Interior Vacuum & Wipe Down</li>
+                                <li>Tire Shine</li>
+                                <li>3 Month Protection</li>
+                                <li>Air Freshener</li>
+                            </ul>
+                            <button class="btn-select">Select ADVANCED</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>EXPRESS DETAIL</h3>
+                            <div class="price">$149</div>
+                            <ul class="features">
+                                <li>Quick Interior Clean</li>
+                                <li>Interior Vacuum</li>
+                                <li>Dashboard & Console Wipe</li>
+                                <li>Window Cleaning</li>
+                                <li>Same Day Service</li>
+                            </ul>
+                            <button class="btn-select">Select EXPRESS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: EXPRESS DETAIL comparison -->
+                <div class="carousel-item">
+                    <div class="comparison-grid">
+                        <div class="package-card featured">
+                            <h3>EXPRESS DETAIL</h3>
+                            <div class="price">$49</div>
+                            <ul class="features">
+                                <li>Basic Exterior Wash</li>
+                                <li>Quick Interior Vacuum</li>
+                                <li>Tire Rinse</li>
+                            </ul>
+                            <button class="btn-select">Select BUDGET</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>SIMPLE DETAIL</h3>
+                            <div class="price">$99</div>
+                            <ul class="features">
+                                <li>Exterior Wash & Dry</li>
+                                <li>Wheel Cleaning</li>
+                                <li>Tire Shine</li>
+                                <li>Window Cleaning (Outside)</li>
+                            </ul>
+                            <button class="btn-select">Select EXT. WASH ONLY</button>
+                        </div>
+                        <div class="package-card">
+                            <h3>EXPRESS</h3>
+                            <div class="price">$149</div>
+                            <ul class="features">
+                                <li>Quick Interior & Exterior Clean</li>
+                                <li>Hand Wash & Dry</li>
+                                <li>Interior Vacuum</li>
+                                <li>Window Cleaning</li>
+                                <li>Same Day Service</li>
+                            </ul>
+                            <button class="btn-select">Select EXPRESS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: SIMPLE DETAIL (single) -->
+                <div class="carousel-item">
+                    <div class="single-package">
+                        <div class="package-card featured">
+                            <h3>SIMPLE DETAIL</h3>
+                            <div class="price">$79</div>
+                            <ul class="features">
+                                <li>Choose Interior OR Exterior Service</li>
+                                <li>Deep Clean of Selected Area</li>
+                                <li>Specialized Treatment</li>
+                                <li>Perfect for Specific Needs</li>
+                                <li>Professional Grade Products</li>
+                                <li>Attention to Detail</li>
+                            </ul>
+                            <button class="btn-select">Select Package</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: EXPRESS INTERIOR -->
+                <div class="carousel-item">
+                    <div class="single-package">
+                        <div class="package-card featured">
+                            <h3>EXPRESS INTERIOR</h3>
+                            <div class="price">$89</div>
+                            <ul class="features">
+                                <li>Full Interior Vacuum</li>
+                                <li>Dashboard & Console Clean</li>
+                                <li>Cup Holder Cleaning</li>
+                                <li>Door Panel Wipe Down</li>
+                                <li>Air Freshener Application</li>
+                                <li>Same Day Service Available</li>
+                            </ul>
+                            <button class="btn-select">Select Package</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: EXPRESS WASH -->
+                <div class="carousel-item">
+                    <div class="single-package">
+                        <div class="package-card featured">
+                            <h3>EXPRESS WASH</h3>
+                            <div class="price">$39</div>
+                            <ul class="features">
+                                <li>Exterior Hand Wash</li>
+                                <li>Soap & Rinse</li>
+                                <li>Basic Dry</li>
+                                <li>Quick & Affordable</li>
+                                <li>Perfect for Regular Maintenance</li>
+                                <li>No Interior Service</li>
+                            </ul>
+                            <button class="btn-select">Select Package</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: WATER REMEDIATION -->
+                <div class="carousel-item">
+                    <div class="single-package">
+                        <div class="package-card featured">
+                            <h3>WATER REMEDIATION</h3>
+                            <div class="price">$199</div>
+                            <ul class="features">
+                                <li>Flood & Water Damage Restoration</li>
+                                <li>Interior Drying & Deodorizing</li>
+                                <li>Mold Prevention Treatment</li>
+                                <li>Electronics Assessment</li>
+                                <li>Comprehensive Damage Report</li>
+                                <li>Insurance Documentation</li>
+                                <li>Emergency Response Available</li>
+                            </ul>
+                            <button class="btn-select">Select Package</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation dots -->
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+                <span class="dot" data-slide="5"></span>
+                <span class="dot" data-slide="6"></span>
             </div>
         </div>
 
         <div class="footer">
             <p> 
-                <span style="font-size: 1.2rem; color: #ffcc00;">🚧</span> Site Under Construction <span style="font-size: 1.2rem; color: #ffcc00;">🚧</span> <br> <br>
-                <a href="https://www.facebook.com/DetailHabitUSA" 
-                    target="_blank">Check out our Facebook</a> <br> <br>
-                <a href="https://www.instagram.com/detailhabit562" 
-                    target="_blank">View our work on instagram</a>   <br> <br>
-                    Created by David Borotkos using Adobe Dreamweaver. <br> <br>
-                    All rights reserved. Copyright 2016                 
+                 <div style="text-align: center; margin-bottom: 20px;">
+            <span style="font-size: .8rem; color: #ffcc00;">
+               <h1><span style="font-size: 2rem; color: #ffcc00;">🚧</span>  Site Under Construction <span style="font-size: 2rem; color: #ffcc00;">🚧</span></h1>
+        </div> <br> <br>
+                <a href="https://www.facebook.com/DetailHabitUSA" target="_blank">Check out our Facebook</a> <br> <br>
+                <a href="https://www.instagram.com/detailhabit562" target="_blank">View our work on instagram</a> <br> <br>
+                Created by David Borotkos using Adobe Dreamweaver. <br> <br>
+                All rights reserved. Copyright 2016                 
             </p>
         </div>
     </div>
 
     <script>
-        // Add interactive functionality for pricing tabs
+        // Get all elements
         const pricingTabs = document.querySelectorAll('.pricing-tab');
-        const pricingItems = document.querySelectorAll('.pricing-item');
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
 
+        // Function to go to a specific slide
+        function goToSlide(slideIndex) {
+            // Update carousel position
+            const slideWidth = 100; // 100% width per slide
+            carouselWrapper.style.transform = `translateX(-${slideIndex * slideWidth}%)`;
+            
+            // Update active states
+            pricingTabs.forEach(tab => tab.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            pricingTabs[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+            
+            currentSlide = slideIndex;
+        }
+
+        // Add click events to pricing tabs
         pricingTabs.forEach((tab, index) => {
             tab.addEventListener('click', () => {
-                // Remove active class from all tabs
-                pricingTabs.forEach(t => t.style.background = 'rgba(255,255,255,0.15)');
-                
-                // Add active class to clicked tab
-                tab.style.background = 'rgba(255,255,255,0.3)';
-                
-                // Here you could add functionality to show/hide specific pricing details
-                console.log(`Clicked on ${tab.textContent} package`);
+                goToSlide(index);
             });
         });
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+
+        // Add click events to select buttons to navigate to specific packages
+        document.querySelectorAll('.btn-select').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const packageName = e.target.textContent.replace('Select ', '').trim();
+                const packageMap = {
+                    'ULTRA': 0,
+                    'PREMIUM': 1,
+                    'ADVANCED': 2,
+                    'EXPRESS': 3,
+                    'BASIC': 4,
+                    'BUDGET': 5,
+                    'Package': 6
+                };
+                
+                if (packageMap.hasOwnProperty(packageName)) {
+                    goToSlide(packageMap[packageName]);
+                }
+            });
+        });
+
+        // Initialize first tab as active
+        goToSlide(0);
+
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            } else if (e.key === 'ArrowRight' && currentSlide < pricingTabs.length - 1) {
+                goToSlide(currentSlide + 1);
+            }
+        });
+
+        // Optional: Add swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselWrapper.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselWrapper.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50 && currentSlide < pricingTabs.length - 1) {
+                goToSlide(currentSlide + 1);
+            }
+            if (touchEndX > touchStartX + 50 && currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        // Order Now button functionality
+        function orderNow() {
+            // For now, this will call the phone number
+            // In the future, this could link to a booking form or scheduling system
+            window.location.href = 'tel:(562) 206-2806';
+        }
 
         // Add hover effects for navigation items
         const navItems = document.querySelectorAll('.nav-item');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                console.log(`Navigating to ${item.textContent}`);
+                if (!item.querySelector('a')) {
+                    console.log(`Navigating to ${item.textContent}`);
+                }
             });
         });
+
+        // IMPROVED Contact card scroll behavior - NO MORE FLICKERING
+        const contactCard = document.querySelector('.contact-info');
+        const pricingSection = document.querySelector('.pricing-section');
+        let isCardHidden = false;
+        let scrollTimeout;
+
+        // Debounced scroll function to prevent rapid firing
+        function debouncedUpdateContactCard() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(updateContactCardPosition, 10); // Small delay to reduce flickering
+        }
+        
+        function updateContactCardPosition() {
+            // Only apply scroll behavior on screens wider than 1290px
+            if (window.innerWidth > 1290) {
+                const pricingRect = pricingSection.getBoundingClientRect();
+                
+                // Make it disappear much earlier - when pricing section is 200px from top
+                const hideThreshold = 200; // Hide when pricing section is 200px from top
+                const showThreshold = 250; // Show when pricing section is 250px from top (50px buffer)
+                
+                if (pricingRect.top <= hideThreshold && !isCardHidden) {
+                    // Hide the card
+                    contactCard.classList.add('stopped');
+                    isCardHidden = true;
+                } else if (pricingRect.top >= showThreshold && isCardHidden) {
+                    // Show the card
+                    contactCard.classList.remove('stopped');
+                    isCardHidden = false;
+                }
+            } else {
+                // Reset for smaller screens - always show the card
+                contactCard.classList.remove('stopped');
+                isCardHidden = false;
+            }
+        }
+
+        // Add event listeners with debouncing
+        window.addEventListener('scroll', debouncedUpdateContactCard, { passive: true });
+        window.addEventListener('resize', () => {
+            // Reset state on resize
+            isCardHidden = false;
+            contactCard.classList.remove('stopped');
+            debouncedUpdateContactCard();
+        });
+        
+        // Initial position check
+        updateContactCardPosition();
     </script>
 </body>
 </html>
