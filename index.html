@@ -74,35 +74,6 @@
             /* No hover effects when stopped */
         }
 
-        /* Order Detail Now Button */
-        .order-button {
-            background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
-            color: #032a42;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 12px;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 3px 10px rgba(255, 204, 0, 0.3);
-        }
-
-        .order-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
-            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
-        }
-
-        .order-button:active {
-            transform: translateY(0px);
-            box-shadow: 0 2px 8px rgba(255, 204, 0, 0.4);
-        }
-
         /* Table-based navigation */
         .navigation {
             max-width: 1000px;
@@ -139,52 +110,6 @@
         .nav-item:hover {
             border-color: rgba(255,255,255,0.5);
             transform: translateY(-1.5px);
-        }
-
-        /* Pricing table */
-        .pricing-section {
-            margin-bottom: 30px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pricing-table {
-            width: 80%;
-            border-collapse: separate;
-            border-spacing: 5px;
-            margin: 0 auto;
-        }
-
-        .pricing-tab {
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 10px 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
-            text-align: center;
-            vertical-align: middle;
-        }
-
-        .pricing-tab:hover {
-            background: rgba(255,255,255,0.25);
-        }
-
-        .pricing-tab.active {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.5);
-        }
-
-        /* Specific width control for different tabs */
-        .pricing-tab.small {
-            width: 12%;
-        }
-
-        .pricing-tab.large {
-            width: 16%;
         }
 
         .main-title {
@@ -252,158 +177,130 @@
             margin: 8px 0;
         }
 
-        /* Carousel Styles */
-        .carousel-container {
+        /* Comparison section */
+        .comparison-section {
+            margin-bottom: 40px;
             max-width: 1000px;
-            margin: 0 auto 40px;
-            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
             background: linear-gradient(135deg, #0b5572 0%, #043452 100%);
             border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            position: relative;
             border: 1px solid rgba(255,255,255,0.2);
+            border-collapse: collapse;
         }
 
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        .comparison-table thead {
+            background: linear-gradient(135deg, #175e7a 0%, #032a42 100%);
+            border-bottom: 2px solid rgba(255,255,255,0.2);
         }
 
-        .carousel-item {
-            min-width: 100%;
-            padding: 40px 20px;
-        }
-
-        /* Comparison layout */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .single-package {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .package-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 30px;
+        .comparison-table th {
+            padding: 25px 15px;
             text-align: center;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(5px);
-        }
-
-        .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .package-card.featured {
-            background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
-            color: #032a42;
-            transform: scale(1.05);
-            border-color: #ffcc00;
-        }
-
-        .package-card.featured h3,
-        .package-card.featured .price {
-            color: #032a42;
-        }
-
-        .package-card h3 {
-            color: #ffcc00;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-
-        .price {
-            font-size: 2.5em;
-            font-weight: bold;
+            font-weight: 700;
             color: white;
-            margin: 20px 0;
+            font-size: 1rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
-        .features {
-            list-style: none;
-            margin: 25px 0;
-            flex-grow: 1;
+        .comparison-table td {
+            padding: 16px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+            text-align: center;
         }
 
-        .features li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            font-size: 14px;
-        }
-
-        .package-card.featured .features li {
-            border-bottom-color: rgba(3,42,66,0.3);
-        }
-
-        .features li:last-child {
+        .comparison-table tbody tr:last-child td {
             border-bottom: none;
+        }
+
+        /* Feature name column */
+        .feature-name {
+            font-weight: 600;
+            color: #ffcc00;
+            width: 25%;
+            text-align: left;
+            background: rgba(0,0,0,0.2);
+        }
+
+        /* Package price cells */
+        .price-cell {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Feature detail cells */
+        .feature-cell {
+            text-align: center;
+        }
+
+        .feature-included {
+            color: #4ade80;
+            font-weight: 600;
+        }
+
+        .feature-partial {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .feature-not-included {
+            color: #94a3b8;
+            opacity: 0.7;
+        }
+
+        /* Package headers */
+        .package-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #ffcc00;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .btn-select {
             background: linear-gradient(135deg, #ffcc00 0%, #ff9900 100%);
             color: #032a42;
-            padding: 12px 30px;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
-            margin-top: auto;
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        .package-card.featured .btn-select {
-            background: linear-gradient(135deg, #032a42 0%, #175e7a 100%);
-            color: white;
+            box-shadow: 0 3px 10px rgba(255, 204, 0, 0.3);
         }
 
         .btn-select:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
         }
 
-        .package-card.featured .btn-select:hover {
-            background: linear-gradient(135deg, #043452 0%, #0b5572 100%);
-        }
-
-        /* Navigation dots */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-            padding-bottom: 20px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.3);
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .dot.active {
-            background-color: #ffcc00;
+        .btn-select:active {
+            transform: translateY(0px);
+            box-shadow: 0 2px 8px rgba(255, 204, 0, 0.4);
         }
 
         .footer {
@@ -422,6 +319,14 @@
 
         .footer a:hover {
             text-decoration: underline;
+        }
+
+        .construction-notice {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
         /* Responsive Styles */
@@ -446,11 +351,6 @@
                 transform: none;
                 pointer-events: auto;
             }
-
-            .order-button {
-                max-width: 300px;
-                margin: 12px auto 0;
-            }
         }
 
         @media (max-width: 768px) {
@@ -462,7 +362,6 @@
             .nav-item {
                 padding: 12px 8px;
                 font-size: 1.2rem;
-                size: 80%;
             }
             
             .contact-info {
@@ -497,54 +396,33 @@
                 font-size: 0.7rem;
             }
 
-            .pricing-tab {
-                padding: 8px 4px;
+            .comparison-title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
                 font-size: 0.8rem;
             }
 
-            .order-button {
-                font-size: 0.9rem;
-                padding: 10px 16px;
+            .feature-name {
+                width: 35%;
+                font-size: 0.85rem;
             }
 
-            /* Carousel responsive */
-            .carousel-item {
-                padding: 20px 5px;
+            .package-header {
+                font-size: 0.95rem;
             }
 
-            .comparison-grid {
-                gap: 10px;
-            }
-
-            .package-card {
-                padding: 15px 10px;
-            }
-
-            .package-card.featured {
-                transform: scale(1);
-            }
-            
-            .package-card h3 {
-                font-size: 1.2em;
-            }
-            
-            .price {
-                font-size: 1.5em;
-                margin: 10px 0;
-            }
-
-            .features {
-                margin: 15px 0;
-            }
-
-            .features li {
-                font-size: 11px;
-                padding: 6px 0;
+            .price-cell {
+                font-size: 1.3rem;
             }
 
             .btn-select {
-                padding: 8px 15px;
-                font-size: 12px;
+                padding: 10px 16px;
+                font-size: 0.8rem;
             }
         }
 
@@ -562,17 +440,7 @@
                 padding: 10px 6px;
                 font-size: 1rem;
             }
-            
-            .pricing-tab {
-                padding: 6px 2px;
-                font-size: 0.7rem;
-            }
 
-            .nav-table, .pricing-table {
-                border-spacing: 5px;
-            }
-
-                        
             .contact-info {
                 max-width: 1000px;
                 width: 100%;
@@ -582,99 +450,61 @@
                 pointer-events: auto;
             }
 
-            .order-button {
-                font-size: 0.8rem;
-                padding: 8px 14px;
+            .comparison-title {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
             }
 
-            /* Carousel responsive */
-            .carousel-item {
-                padding: 15px 3px;
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 6px;
+                font-size: 0.7rem;
             }
 
-            .comparison-grid {
-                gap: 5px;
+            .feature-name {
+                width: 40%;
+                font-size: 0.7rem;
             }
 
-            .package-card {
-                padding: 12px 8px;
+            .package-header {
+                font-size: 0.85rem;
             }
 
-            .package-card h3 {
-                font-size: 1em;
-            }
-
-            .price {
-                font-size: 1.3em;
-            }
-
-            .features li {
-                font-size: 10px;
-                padding: 5px 0;
+            .price-cell {
+                font-size: 1rem;
             }
 
             .btn-select {
-                padding: 6px 10px;
-                font-size: 11px;
+                padding: 8px 12px;
+                font-size: 0.7rem;
             }
         }
 
         @media (max-width: 375px) {
-            .carousel-item {
-                padding: 10px 2px;
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 4px;
+                font-size: 0.65rem;
             }
 
-            .comparison-grid {
-                gap: 3px;
+            .package-header {
+                font-size: 0.75rem;
             }
 
-            .package-card {
-                padding: 10px 5px;
-                border-radius: 5px;
-            }
-
-            .package-card h3 {
-                font-size: 0.9em;
-                margin-bottom: 8px;
-            }
-
-            .price {
-                font-size: 1.1em;
-                margin: 8px 0;
-            }
-
-            .features {
-                margin: 10px 0;
-            }
-
-            .features li {
-                font-size: 9px;
-                padding: 4px 0;
-                line-height: 1.3;
+            .price-cell {
+                font-size: 0.9rem;
             }
 
             .btn-select {
-                padding: 5px 8px;
-                font-size: 10px;
-            }
-
-            .carousel-dots {
-                margin-top: 15px;
-            }
-
-            .dot {
-                width: 8px;
-                height: 8px;
+                padding: 6px 10px;
+                font-size: 0.65rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <span style="font-size: .8rem; color: #ffcc00;">
-               <h1><span style="font-size: 2rem; color: #ffcc00;">🚧</span>  Site Under Construction -- Prices are Incorrect! <span style="font-size: 2rem; color: #ffcc00;">🚧</span></h1>
-        </div>
+
 
         <div class="header">
             <h1 class="main-title">DETAIL HABIT</h1>
@@ -686,9 +516,6 @@
         <nav class="navigation">
             <table class="nav-table">
                 <tr>
-                    <td class="nav-item">
-                        <a href="https://docs.google.com/spreadsheets/d/1JiSHpr9O0UUGRvSqkHI3OktPO6eI6W9MXfn3TrDzq-w/edit?gid=0#gid=0" target="_blank">Price Sheet</a>
-                    </td>
                     <td class="nav-item">Our Team</td>
                     <td class="nav-item">
                         <a href="https://www.instagram.com/detailhabit562" target="_blank">Our Work</a>
@@ -701,274 +528,185 @@
         <!-- Contact card positioned below navigation on smaller screens -->
         <div class="contact-info">
             <div class="contact-card-title">GET IN TOUCH</div>
-            <div class="phone">(562) 206-2806</div>
+            <div class="phone">(562) 819 - 8022</div>
             <div class="contact-divider"></div>
             <div class="email">
                 <a href="mailto:DETAILHABIT562@GMAIL.COM">
-                    📧 DETAILHABIT562@GMAIL.COM
+                    DETAILHABIT562@GMAIL.COM
                 </a>
             </div>
             <div class="email">
                 <a href="https://instagram.com/detailhabit562">
-                    📱 IG: @DETAILHABITLBC
+                    IG: @DETAILHABITLBC
                 </a>
             </div>
             <div class="email">
                 <a href="https://www.facebook.com/DetailHabitUSA">
-                    📘 Our Facebook Page
+                    Our Facebook Page
                 </a>
             </div>
-            <button class="order-button" onclick="orderNow()">
-                🚗 How It Works
-            </button>
         </div>
 
-        <!-- Table-based pricing navigation -->
-        <div class="pricing-section">
-            <table class="pricing-table">
-                <tr>
-                    <td class="pricing-tab small" data-slide="0">ULTRA</td>
-                    <td class="pricing-tab small" data-slide="1">PREMIUM</td>
-                    <td class="pricing-tab small" data-slide="2">EXPRESS DETAIL</td>
-                    <td class="pricing-tab small" data-slide="3">SIMPLE DETAIL</td>
-                    <td class="pricing-tab small" data-slide="4">EXPRESS INTERIOR</td>
-                    <td class="pricing-tab small" data-slide="5">EXPRESS WASH</td>
-                    <td class="pricing-tab large" data-slide="6">WATER REMEDIATION</td>
-                </tr>
+        <!-- Comparison Section -->
+        <div class="comparison-section">
+            <h2 class="comparison-title">SERVICE PACKAGES</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>
+                            <div class="package-header">ULTRA</div>
+                            <br/>
+                            <div class="price-cell">$400</div>
+                        </th>
+                        <th>
+                            <div class="package-header">PREMIUM</div>
+                            <br/>
+                            <div class="price-cell">$300</div>
+                        </th>
+                        <th>
+                            <div class="package-header">EXPRESS</div>
+                            <br/>
+                            <div class="price-cell">$130</div>
+                        </th>
+                        <th>
+                            <div class="package-header" style="white-space: nowrap;">WATER REMEDIATION</div>
+                            <br/>
+                            <div class="price-cell">$199</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Interior Detail</td>
+                        <td class="feature-cell"><span class="feature-included">Full</span></td>
+                        <td class="feature-cell"><span class="feature-included">Full</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Exterior Wash</td>
+                        <td class="feature-cell"><span class="feature-included">Complete</span></td>
+                        <td class="feature-cell"><span class="feature-included">Full</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Paint Protection</td>
+                        <td class="feature-cell"><span class="feature-included">Ceramic Coating</span></td>
+                        <td class="feature-cell"><span class="feature-included">Sealant</span></td>
+                        <td class="feature-cell"><span class="feature-included">Wax</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">N/A</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Engine Bay Cleaning</td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Paint Correction</td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="feature-name">Leather Conditioning</td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Carpet & Upholstery Shampoo</td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Tire & Wheel Protection</td>
+                        <td class="feature-cell"><span class="feature-included">On Request</span></td>
+                        <td class="feature-cell"><span class="feature-included">On Request</span></td>
+                        <td class="feature-cell"><span class="feature-included">On Request</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Window Treatment</td>
+                        <td class="feature-cell"><span class="feature-included">Premium</span></td>
+                        <td class="feature-cell"><span class="feature-included">Rain</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                    </tr>
+                                        <tr>
+                        <td class="feature-name">Protection Warranty</td>
+                        <td class="feature-cell"><span class="feature-included">1 Year</span></td>
+                        <td class="feature-cell"><span class="feature-included">6 Months</span></td>
+                        <td class="feature-cell"><span class="feature-included">3 Months</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">N/A</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="feature-name">Priority Scheduling</td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Drying & Deodorizing</td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Mold Prevention</td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Damage Assessment</td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Insurance Documentation</td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-not-included">No</span></td>
+                        <td class="feature-cell"><span class="feature-included">Yes</span></td>
+                    </tr>
+
+                    <tr style="background: rgba(0,0,0,0.2);">
+                        <td class="feature-name"></td>
+                        <td style="padding-top: 20px; padding-bottom: 20px;">
+                            <button class="btn-select">Book ULTRA</button>
+                        </td>
+                        <td style="padding-top: 20px; padding-bottom: 20px;">
+                            <button class="btn-select">Book PREMIUM</button>
+                        </td>
+                        <td style="padding-top: 20px; padding-bottom: 20px;">
+                            <button class="btn-select">Book EXPRESS</button>
+                        </td>
+                        <td style="padding-top: 20px; padding-bottom: 20px;">
+                            <button class="btn-select">Book REMEDIATION</button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-        </div>
- <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-         <span style="font-size: .8rem; color: #ffcc00;">
-             <h1> <span style="font-size: 2rem; color: #ffcc00;">🚧</span>   Site Under Construction -- Prices are Incorrect! <span style="font-size: 2rem; color: #ffcc00;">🚧</span></h1>
-        </div>
-        <!-- Carousel -->
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
-                <!-- Slide 1: ULTRA comparison (Ultra, Premium, Advanced) -->
-                <div class="carousel-item">
-                    <div class="comparison-grid">
-                        <div class="package-card featured">
-                            <h3>ULTRA</h3>
-                            <div class="price">$399</div>
-                            <ul class="features">
-                                <li>Complete Interior & Exterior Detail</li>
-                                <li>Paint Correction & Ceramic Coating</li>
-                                <li>Engine Bay Cleaning</li>
-                                <li>Leather Conditioning</li>
-                                <li>1 Year Protection Warranty</li>
-                                <li>Priority Scheduling</li>
-                                <li>Free Maintenance Wash</li>
-                            </ul>
-                            <button class="btn-select">Select ULTRA</button>
-                        </div>
-                        <div class="package-card">
-                            <h3>PREMIUM</h3>
-                            <div class="price">$299</div>
-                            <ul class="features">
-                                <li>Full Interior & Exterior Detail</li>
-                                <li>Paint Sealant Application</li>
-                                <li>Carpet & Upholstery Shampoo</li>
-                                <li>Tire & Wheel Protection</li>
-                                <li>6 Month Protection</li>
-                                <li>Window Rain Treatment</li>
-                            </ul>
-                            <button class="btn-select">Select PREMIUM</button>
-                        </div>
-                        <div class="package-card">
-                            <h3>EXPRESS DETAIL</h3>
-                            <div class="price">$199</div>
-                            <ul class="features">
-                                <li>Interior & Exterior Wash</li>
-                                <li>Wax Application</li>
-                                <li>Interior Vacuum & Wipe Down</li>
-                                <li>Tire Shine</li>
-                                <li>3 Month Protection</li>
-                                <li>Air Freshener</li>
-                            </ul>
-                            <button class="btn-select">Select ADVANCED</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2: PREMIUM comparison (Premium, Advanced, Express) -->
-                <div class="carousel-item">
-                    <div class="comparison-grid">
-                        <div class="package-card featured">
-                            <h3>PREMIUM</h3>
-                            <div class="price">$299</div>
-                            <ul class="features">
-                                <li>Full Interior & Exterior Detail</li>
-                                <li>Paint Sealant Application</li>
-                                <li>Carpet & Upholstery Shampoo</li>
-                                <li>Tire & Wheel Protection</li>
-                                <li>6 Month Protection</li>
-                                <li>Window Rain Treatment</li>
-                            </ul>
-                            <button class="btn-select">Select PREMIUM</button>
-                        </div>
-                        <div class="package-card">
-                            <h3>ADVANCED</h3>
-                            <div class="price">$199</div>
-                            <ul class="features">
-                                <li>Interior & Exterior Wash</li>
-                                <li>Wax Application</li>
-                                <li>Interior Vacuum & Wipe Down</li>
-                                <li>Tire Shine</li>
-                                <li>3 Month Protection</li>
-                                <li>Air Freshener</li>
-                            </ul>
-                            <button class="btn-select">Select ADVANCED</button>
-                        </div>
-                        <div class="package-card">
-                            <h3>EXPRESS DETAIL</h3>
-                            <div class="price">$149</div>
-                            <ul class="features">
-                                <li>Quick Interior Clean</li>
-                                <li>Interior Vacuum</li>
-                                <li>Dashboard & Console Wipe</li>
-                                <li>Window Cleaning</li>
-                                <li>Same Day Service</li>
-                            </ul>
-                            <button class="btn-select">Select EXPRESS</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3: EXPRESS DETAIL comparison -->
-                <div class="carousel-item">
-                    <div class="comparison-grid">
-                        <div class="package-card featured">
-                            <h3>EXPRESS DETAIL</h3>
-                            <div class="price">$49</div>
-                            <ul class="features">
-                                <li>Basic Exterior Wash</li>
-                                <li>Quick Interior Vacuum</li>
-                                <li>Tire Rinse</li>
-                            </ul>
-                            <button class="btn-select">Select BUDGET</button>
-                        </div>
-                        <div class="package-card">
-                            <h3>SIMPLE DETAIL</h3>
-                            <div class="price">$99</div>
-                            <ul class="features">
-                                <li>Exterior Wash & Dry</li>
-                                <li>Wheel Cleaning</li>
-                                <li>Tire Shine</li>
-                                <li>Window Cleaning (Outside)</li>
-                            </ul>
-                            <button class="btn-select">Select EXT. WASH ONLY</button>
-                        </div>
-                        <div class="package-card">
-                            <h3>EXPRESS</h3>
-                            <div class="price">$149</div>
-                            <ul class="features">
-                                <li>Quick Interior & Exterior Clean</li>
-                                <li>Hand Wash & Dry</li>
-                                <li>Interior Vacuum</li>
-                                <li>Window Cleaning</li>
-                                <li>Same Day Service</li>
-                            </ul>
-                            <button class="btn-select">Select EXPRESS</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4: SIMPLE DETAIL (single) -->
-                <div class="carousel-item">
-                    <div class="single-package">
-                        <div class="package-card featured">
-                            <h3>SIMPLE DETAIL</h3>
-                            <div class="price">$79</div>
-                            <ul class="features">
-                                <li>Choose Interior OR Exterior Service</li>
-                                <li>Deep Clean of Selected Area</li>
-                                <li>Specialized Treatment</li>
-                                <li>Perfect for Specific Needs</li>
-                                <li>Professional Grade Products</li>
-                                <li>Attention to Detail</li>
-                            </ul>
-                            <button class="btn-select">Select Package</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5: EXPRESS INTERIOR -->
-                <div class="carousel-item">
-                    <div class="single-package">
-                        <div class="package-card featured">
-                            <h3>EXPRESS INTERIOR</h3>
-                            <div class="price">$89</div>
-                            <ul class="features">
-                                <li>Full Interior Vacuum</li>
-                                <li>Dashboard & Console Clean</li>
-                                <li>Cup Holder Cleaning</li>
-                                <li>Door Panel Wipe Down</li>
-                                <li>Air Freshener Application</li>
-                                <li>Same Day Service Available</li>
-                            </ul>
-                            <button class="btn-select">Select Package</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6: EXPRESS WASH -->
-                <div class="carousel-item">
-                    <div class="single-package">
-                        <div class="package-card featured">
-                            <h3>EXPRESS WASH</h3>
-                            <div class="price">$39</div>
-                            <ul class="features">
-                                <li>Exterior Hand Wash</li>
-                                <li>Soap & Rinse</li>
-                                <li>Basic Dry</li>
-                                <li>Quick & Affordable</li>
-                                <li>Perfect for Regular Maintenance</li>
-                                <li>No Interior Service</li>
-                            </ul>
-                            <button class="btn-select">Select Package</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 7: WATER REMEDIATION -->
-                <div class="carousel-item">
-                    <div class="single-package">
-                        <div class="package-card featured">
-                            <h3>WATER REMEDIATION</h3>
-                            <div class="price">$199</div>
-                            <ul class="features">
-                                <li>Flood & Water Damage Restoration</li>
-                                <li>Interior Drying & Deodorizing</li>
-                                <li>Mold Prevention Treatment</li>
-                                <li>Electronics Assessment</li>
-                                <li>Comprehensive Damage Report</li>
-                                <li>Insurance Documentation</li>
-                                <li>Emergency Response Available</li>
-                            </ul>
-                            <button class="btn-select">Select Package</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation dots -->
-            <div class="carousel-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
-                <span class="dot" data-slide="3"></span>
-                <span class="dot" data-slide="4"></span>
-                <span class="dot" data-slide="5"></span>
-                <span class="dot" data-slide="6"></span>
-            </div>
         </div>
 
         <div class="footer">
             <p> 
-                 <div style="text-align: center; margin-bottom: 20px;">
-            <span style="font-size: .8rem; color: #ffcc00;">
-               <h1><span style="font-size: 2rem; color: #ffcc00;">🚧</span>   Site Under Construction -- Prices are Incorrect! <span style="font-size: 2rem; color: #ffcc00;">🚧</span></h1>
-        </div> <br> <br>
                 <a href="https://www.facebook.com/DetailHabitUSA" target="_blank">Check out our Facebook</a> <br> <br>
                 <a href="https://www.instagram.com/detailhabit562" target="_blank">View our work on instagram</a> <br> <br>
                 Created by David Borotkos using Adobe Dreamweaver. <br> <br>
@@ -978,160 +716,55 @@
     </div>
 
     <script>
-        // Get all elements
-        const pricingTabs = document.querySelectorAll('.pricing-tab');
-        const carouselWrapper = document.querySelector('.carousel-wrapper');
-        const dots = document.querySelectorAll('.dot');
-        let currentSlide = 0;
-
-        // Function to go to a specific slide
-        function goToSlide(slideIndex) {
-            // Update carousel position
-            const slideWidth = 100; // 100% width per slide
-            carouselWrapper.style.transform = `translateX(-${slideIndex * slideWidth}%)`;
-            
-            // Update active states
-            pricingTabs.forEach(tab => tab.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            pricingTabs[slideIndex].classList.add('active');
-            dots[slideIndex].classList.add('active');
-            
-            currentSlide = slideIndex;
-        }
-
-        // Add click events to pricing tabs
-        pricingTabs.forEach((tab, index) => {
-            tab.addEventListener('click', () => {
-                goToSlide(index);
-            });
-        });
-
-        // Add click events to dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-            });
-        });
-
-        // Add click events to select buttons to navigate to specific packages
+        // Add click handlers to select buttons
         document.querySelectorAll('.btn-select').forEach(button => {
             button.addEventListener('click', (e) => {
-                const packageName = e.target.textContent.replace('Select ', '').trim();
-                const packageMap = {
-                    'ULTRA': 0,
-                    'PREMIUM': 1,
-                    'ADVANCED': 2,
-                    'EXPRESS': 3,
-                    'BASIC': 4,
-                    'BUDGET': 5,
-                    'Package': 6
-                };
-                
-                if (packageMap.hasOwnProperty(packageName)) {
-                    goToSlide(packageMap[packageName]);
-                }
-            });
-        });
-
-        // Initialize first tab as active
-        goToSlide(0);
-
-        // Optional: Add keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && currentSlide > 0) {
-                goToSlide(currentSlide - 1);
-            } else if (e.key === 'ArrowRight' && currentSlide < pricingTabs.length - 1) {
-                goToSlide(currentSlide + 1);
-            }
-        });
-
-        // Optional: Add swipe support for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        carouselWrapper.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        carouselWrapper.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            if (touchEndX < touchStartX - 50 && currentSlide < pricingTabs.length - 1) {
-                goToSlide(currentSlide + 1);
-            }
-            if (touchEndX > touchStartX + 50 && currentSlide > 0) {
-                goToSlide(currentSlide - 1);
-            }
-        }
-
-        // Order Now button functionality
-        function orderNow() {
-            // For now, this will call the phone number
-            // In the future, this could link to a booking form or scheduling system
-            window.location.href = 'tel:(562) 206-2806';
-        }
-
-        // Add hover effects for navigation items
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (!item.querySelector('a')) {
-                    console.log(`Navigating to ${item.textContent}`);
-                }
+                const packageName = e.target.textContent;
+                console.log(`Selected: ${packageName}`);
+                // Future: Add booking form or contact logic here
             });
         });
 
         // IMPROVED Contact card scroll behavior - NO MORE FLICKERING
         const contactCard = document.querySelector('.contact-info');
-        const pricingSection = document.querySelector('.pricing-section');
+        const comparisonSection = document.querySelector('.comparison-section');
         let isCardHidden = false;
         let scrollTimeout;
 
         // Debounced scroll function to prevent rapid firing
         function debouncedUpdateContactCard() {
             clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(updateContactCardPosition, 10); // Small delay to reduce flickering
+            scrollTimeout = setTimeout(updateContactCardPosition, 10);
         }
         
         function updateContactCardPosition() {
             // Only apply scroll behavior on screens wider than 1290px
             if (window.innerWidth > 1290) {
-                const pricingRect = pricingSection.getBoundingClientRect();
+                const comparisonRect = comparisonSection.getBoundingClientRect();
                 
-                // Make it disappear much earlier - when pricing section is 200px from top
-                const hideThreshold = 200; // Hide when pricing section is 200px from top
-                const showThreshold = 250; // Show when pricing section is 250px from top (50px buffer)
+                const hideThreshold = 200;
+                const showThreshold = 250;
                 
-                if (pricingRect.top <= hideThreshold && !isCardHidden) {
-                    // Hide the card
+                if (comparisonRect.top <= hideThreshold && !isCardHidden) {
                     contactCard.classList.add('stopped');
                     isCardHidden = true;
-                } else if (pricingRect.top >= showThreshold && isCardHidden) {
-                    // Show the card
+                } else if (comparisonRect.top >= showThreshold && isCardHidden) {
                     contactCard.classList.remove('stopped');
                     isCardHidden = false;
                 }
             } else {
-                // Reset for smaller screens - always show the card
                 contactCard.classList.remove('stopped');
                 isCardHidden = false;
             }
         }
 
-        // Add event listeners with debouncing
         window.addEventListener('scroll', debouncedUpdateContactCard, { passive: true });
         window.addEventListener('resize', () => {
-            // Reset state on resize
             isCardHidden = false;
             contactCard.classList.remove('stopped');
             debouncedUpdateContactCard();
         });
         
-        // Initial position check
         updateContactCardPosition();
     </script>
 </body>
